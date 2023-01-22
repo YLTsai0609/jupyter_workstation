@@ -1383,3 +1383,9 @@ c.LocalAuthenticator.create_system_users = True
 ## Maximum number of entries per page for paginated results.
 #  Default: 250
 # c.Pagination.max_per_page = 250
+
+# extensions
+
+import os
+os.environ['JUPYTER_CONFIG_DIR'] = '/usr/local/etc/jupyter/nbconfig'
+c.Spawner.env_keep.append('JUPYTER_CONFIG_DIR')

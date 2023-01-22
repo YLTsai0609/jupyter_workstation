@@ -16,13 +16,11 @@ WalkThrough
 
 [x] - 產生 jupyterhub_config.py，搬出來
 
-[ ] - local machine user, docker swam user - mismatch
+[x] - local machine user, docker swam user - mismatch
 
-[ ] - don't use system pip please QQ......
+[x] - nbextension
 
-[ ] - nbextension
-
-[ ] - jupyter-template
+[x] - jupyter-template
 # NOTE
 
 1.0.0 有點問題，Set LocalAuthenticator.create_system_users=True
