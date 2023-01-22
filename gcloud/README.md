@@ -19,6 +19,7 @@ NOTE: develop in docker is still faster = )
 ref : https://medium.com/google-cloud/containerized-jupyter-notebooks-on-gpu-on-google-cloud-8e86ef7f31e9
 
 # Trouble Shooting
+## ssh concern when GCE ip is shifting
 
 ```
                                                                                                                                                                                                     1,1           All
@@ -40,9 +41,16 @@ lost connection
 
 * ref : https://oit.colorado.edu/services/consulting-professional-services/systems-engineering/services/change-host-keys-used-ssh
 
+## NodeJs version and pip version issue
+
+* [install node 16 for ubuntu 18.04](https://github.com/nodesource/distributions#deb), or we cannot `npm install configurable-http-proxy`
+
 clean nodejs on ubuntu
 
 ```
 apt-get purge nodejs &&\
 rm -r /etc/apt/sources.list.d/nodesource.list
 ```
+
+* ubuntu 18.04 automantically use python3.6
+* please update pip from 9.x to 21.x to avoid `rust` XXX
