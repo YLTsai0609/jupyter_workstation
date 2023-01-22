@@ -1,2 +1,2 @@
 # to set passwd for admin user
-docker exec -it jupyterhub bash
+docker exec -it container_name bash

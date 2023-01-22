@@ -1,1 +1,1 @@
-docker build -f Dockerfile.v1 -t workstation_cpu:v1
+docker build -f Dockerfile -t workstation_cpu:v1
