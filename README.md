@@ -2,37 +2,38 @@
 
 Jupyterhub + nbextension + templates + GPU driver support (if necessary)
 
-* [x] - 拉取 jupyterhub ， 連接 volumn ， 跑起來
+<img src='./assets/hub_arct.png'></img>
 
-* [x] - 建立 user - jupyterhub
+Detail Settings : 
 
-* [x] - 安裝 gcc , vim & 安裝 notebook
-
-* [x] - 配置 home 權限，驗證本機端的 notebook
-
-* [x] - 設置 jupyterhub 為 admin(super user)
-
-* [x] - 產生 jupyterhub_config.py，搬出來
-
-* [x] - local machine user, docker swam user - mismatch
-
-* [x] - nbextension
-
-* [x] - jupyter-template
-
+1. use jupyterhub 1.5.1 for stability
+2. use LocalAuthenticator (create user in system)
+3. put `jupyterhub_config.py` into `srv/jupyterhub/jupyterhub_config.py`
+4. (GCE) deploy jupyterhub.service from `/opt/jupyterhub/etc/systemd/jupyterhub.service` to `/etc/systemd/system/jupyterhub.service` (soft link)
 
 # User Management
 
 ## add user
+
+### Docker
 * by jupyterhub GUI (without password)
 * root `useradd` username (X) - wrong folder path
 * root `passwd` userpassword
 
-### user auth about its folder
+### GCE
+* root `useradd` username (X) - wrong folder path
+* root `passwd` userpassword
 
 
 ## delete user
-   * root userdel uname 
-   * root userdel -r uname (folders & buffers)
+### Docker
+* root userdel uname 
+* root userdel -r uname (folders & buffers)
+
+### GCE
+
+* be careful! - we should delete any user registered on the workstation.
 
 ref : https://blog.csdn.net/weixin_48114253/article/details/117548513
+
+
