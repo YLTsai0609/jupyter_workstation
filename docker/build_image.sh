@@ -1,1 +1,1 @@
-docker build -f Dockerfile -t workstation_cpu:v1
+docker build -f DockerfileName -t image_name:tag_name

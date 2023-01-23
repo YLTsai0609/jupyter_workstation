@@ -4,9 +4,14 @@ To simplify user management - without mapping host-machine users to jupyterhub s
 
 steps:
 
+on local machine
+
 0. pick your machine-type (computational resource) and image (use ubuntu18.04)
-1. `bash create_gce.sh` (make sure your gcloud works fine with your project)
+1. `$bash create_gce.sh` (make sure your gcloud works fine with your project)
 2. `bash login_gce.sh` (put your ssh keys)
+
+on remote host
+
 3. `scp or git clone` repo
 4. `sudo -s && cd /home/`
 5. `sudo bash install_workstation_cpu.sh`

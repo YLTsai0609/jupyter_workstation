@@ -14,4 +14,8 @@ gcloud compute instances create $INSTANCE_NAME \
 # --node-project $PROJECT \
 
 # delete instance
-# gcloud compute instances delete example-instance
+# gcloud compute instances delete instance_name
+
+# start and stop the instance 
+# ref : https://cloud.google.com/compute/docs/instances/stop-start-instance
+# gcloud compute instances stop instance_name 

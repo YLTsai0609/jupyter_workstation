@@ -1,4 +1,4 @@
-# some essential test
+# some essential test if we meets some trouble
 
 # get into docker
 sh hub_shell.sh
@@ -23,3 +23,6 @@ ls /usr/local/etc/jupyter/nbconfig
 # jupyterhub, should execute successfully (without error msg)
 
 jupyterhub --help
+
+# container-root configurable-http-proxy
+configurable-http-proxy --help

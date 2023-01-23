@@ -92,3 +92,7 @@ target/
 .mypy_cache/
 
 
+# exclude stuff
+
+.*.txt
+.*.swp
