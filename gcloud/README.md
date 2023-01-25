@@ -2,26 +2,41 @@
 
 To simplify user management - without mapping host-machine users to jupyterhub swarmed user(in the container), A simple way is use GCE as a deployment directly
 
-steps:
+## Overall Picture
 
-on local machine
+1. `create GCE instance with specified machine type and image`
+2. `login GCE by gcloud command`
+3. `install jupyterhub, nbextension, jupyter-template in root python env`
+4. `deploy jupyterhub_config.py & jupyter service`
+5. `set up password for jupyterhub`
+6. `(optional) make GCE ip stable and add ssh keys`
+7. enjoy!
 
-0. pick your machine-type (computational resource) and image (use ubuntu18.04)
-1. `$bash create_gce.sh` (make sure your gcloud works fine with your project)
-2. `bash login_gce.sh` (put your ssh keys)
 
-on remote host
+## Detail Steps
 
-3. `scp or git clone` repo
-4. `sudo -s && cd /home/`
-5. `sudo bash install_workstation_cpu.sh`
-6. (optional) - check dependency works fine(`test.sh`)
-7. deploy config - check `deploy_config.sh`
-8. `bash deploy.service.sh`
+1. create GCE instance with specified machine type and image
+   - check machine-type (computational resource) and image (use ubuntu18.04) by `info/list_machine_resource.sh`, `info/list_image_list.sh`
+   - `username@localhost:~/path/jupyter_workstation/gcloud$ bash create_gce.sh`
+2. login GCE by gcloud command
+   - `username@localhost:~/path/jupyter_workstation/gcloud$ bash login_gce.sh`
+3. install jupyterhub, nbextension, jupyter-template in root python env
+   - git clone or scp `jupyter_workstation` to remote
+   - `username@localhost:~/path/jupyter_workstation/gcloud$ chomd 777 install_workstation_cpu.sh`
+   - `username@Remote:~/$ sudo -s` (for better control)
+   -  `root@Remote:path/jupyterworkstation/gcloud/$ bash install_workstation_cpu.sh`
+   -  test installtion by some command in `test.sh`
+4. deploy jupyterhub_config.py & jupyter service 
+   - `root@Remote:path/jupyterworkstation/gcloud/$ bash deploy_config.sh` 
+   - `root@Remote:path/jupyterworkstation/gcloud/$ bash deploy_service.sh`
+   - test service by some command in `deploy_service.sh`
+5. set up password for jupyterhub
+   - `root@Remote:path/jupyterworkstation/gcloud/$ passwd jupyterhub`
+   - or any user need to login. 
 
 NOTE: develop in docker is still faster = )
 
-ref : https://medium.com/google-cloud/containerized-jupyter-notebooks-on-gpu-on-google-cloud-8e86ef7f31e9
+[ref](https://medium.com/google-cloud/containerized-jupyter-notebooks-on-gpu-on-google-cloud-8e86ef7f31e9)
 
 # Trouble Shooting
 ## ssh concern when GCE ip is shifting

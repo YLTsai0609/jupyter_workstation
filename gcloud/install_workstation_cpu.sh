@@ -1,9 +1,3 @@
-# change to user root
-# sudo -s
-# cd /home
-# chmod 777 username/install_workstation-cpu.sh
-# bash username/install_workstation-cpu.sh
-
 # install base requirements
 # code borrow from jupyterhub dockerfile
 # https://github.com/jupyterhub/jupyterhub/blob/main/Dockerfile
@@ -63,3 +57,5 @@ jupyter nbextensions_configurator enable --system
 jupyter nbextension install --py jupytemplate --system --symlink --debug
 
 jupyter nbextension enable jupytemplate --py
+
+jupyter nbextension enable jupytemplate/main --system

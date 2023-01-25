@@ -1,5 +1,6 @@
 # Checklist
 
+## CPU-Workstation with nb-extension & nb templates
 
 * [x] - 拉取 jupyterhub ， 連接 volumn ， 跑起來
 
@@ -19,6 +20,18 @@
 
 * [x] - jupyter-template
 
+* [X] - GCE version 
+
+## GPU-Workstation enhancement
+
+* [ ] - add nvidia docker dockerfile mixin.
+* [ ] - test it by `nvidia-smi`
+* [ ] - test it by `keras`, `tensorflow`, `pytorch`
+* [ ] - GCE version
+
+## Security - SSH 
+
+pass
 
 # User Management
 

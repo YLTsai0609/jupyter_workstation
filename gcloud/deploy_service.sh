@@ -14,5 +14,6 @@ sudo systemctl enable jupyterhub.service
 
 sudo systemctl status jupyterhub.service
 
-# validate by sudo lsof -i -P -n | grep LISTEN
+# validate by 
+# sudo lsof -i -P -n | grep LISTEN
 # get external up : curl ifconfig.me.
