@@ -12,8 +12,8 @@ Detail Settings :
 4. (GCE) deploy jupyterhub.service from `/opt/jupyterhub/etc/systemd/jupyterhub.service` to `/etc/systemd/system/jupyterhub.service` (soft link)
 
 # TODO
+1. tensorflow GPU Test
 
-1. tensorflow / pytorch GPU test
 # User Management
 
 ## add user

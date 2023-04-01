@@ -5,7 +5,10 @@ To simplify user management - without mapping host-machine users to jupyterhub s
 
 ## Overall Picture
 
-1. `create GCE instance with specified machine type and image by create_gce.sh or creaye_gce_gpu.sh` 
+1. `create GCE instance with specified machine type and image by` 
+   1. `create_gce.sh`
+   2. `create_gce_gpu.sh` - with nvidia driver only (without nvidia cuda toolkit and cuda runtime)
+   3. `create_gce_gpu_torch.sh` - with nvidia driver, nvcc and pytorch
 2. `login GCE by gcloud command`
 3. `install jupyterhub, nbextension, jupyter-template in root python env`
 4. `deploy jupyterhub_config.py & jupyter service`
@@ -80,3 +83,16 @@ rm -r /etc/apt/sources.list.d/nodesource.list
 
 * ubuntu 18.04 automantically use python3.6
 * please update pip from 9.x to 21.x to avoid `rust` XXX
+
+## GPU trouble shooting
+
+1. [stop machine / start machine, detached GPU, `nvidia-smi` could not found gpu](https://stackoverflow.com/questions/71596911/can-not-find-nvidia-driver-after-stop-and-start-a-deep-learning-vm?fbclid=IwAR3oHl_svU9jXjU7H1OyS6q2L1v--6JsQhpO539PUSoOwTXkzDkBKBd1xV4)
+   - compelete remove cuda and start over.
+   - `sudo apt remove --purge '*nvidia*'`
+   - `sudo python3 /opt/google/install_gpu_driver.py` (systemwise python)
+
+2. [Use GPU in CircleCI](https://circleci.com/docs/using-gpu/?fbclid=IwAR0N5qHWGwqpdGg2wR6irVolhA8LbxMVkcvkfy18Gq_hFoQeRX4hqEsrPIE)
+
+## NOTE
+
+1. 按照不同需求來裝，如果是需要 torch，直接裝 `create_gce_gpu_torch.sh`，先挑好 cuda 版本，在自動挑 torch 版本，如果有需要，再安裝 tensorflow
