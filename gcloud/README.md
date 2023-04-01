@@ -5,7 +5,7 @@ To simplify user management - without mapping host-machine users to jupyterhub s
 
 ## Overall Picture
 
-1. `create GCE instance with specified machine type and image`
+1. `create GCE instance with specified machine type and image by create_gce.sh or creaye_gce_gpu.sh` 
 2. `login GCE by gcloud command`
 3. `install jupyterhub, nbextension, jupyter-template in root python env`
 4. `deploy jupyterhub_config.py & jupyter service`
@@ -28,9 +28,9 @@ To simplify user management - without mapping host-machine users to jupyterhub s
    - `username@localhost:~/path/jupyter_workstation/gcloud$ bash login_gce.sh`
 3. install jupyterhub, nbextension, jupyter-template in root python env
    - git clone or scp `jupyter_workstation` to remote
-   - `username@localhost:~/path/jupyter_workstation/gcloud$ chomd 777 install_workstation_cpu.sh`
+   - `username@localhost:~/path/jupyter_workstation/gcloud$ chomd 777 install_workstation.sh`
    - `username@Remote:~/$ sudo -s` (for better control)
-   -  `root@Remote:path/jupyterworkstation/gcloud/$ bash install_workstation_cpu.sh`
+   -  `root@Remote:path/jupyterworkstation/gcloud/$ bash install_workstation.sh`
    -  test installtion by some command in `test.sh`
 4. deploy jupyterhub_config.py & jupyter service 
    - `root@Remote:path/jupyterworkstation/gcloud/$ bash deploy_config.sh` 
