@@ -45,4 +45,5 @@ ref : https://blog.csdn.net/weixin_48114253/article/details/117548513
 * pre-study on GCE : 4hr
 * develop using docker : 2+4 hr
 * develop using gcloud : 2+3 hr
+* GPU setup on gcloud : 3 hr
 * Total : 15hr
