@@ -2,11 +2,6 @@
 
 To simplify user management - without mapping host-machine users to jupyterhub swarmed user(in the container), A simple way is use GCE as a deployment directly
 
-## TODO
-
-Attach Multiple GPU for GCE
-
-* https://cloud.google.com/compute/docs/gpus/add-remove-gpus#api
 
 ## Overall Picture
 
@@ -17,6 +12,11 @@ Attach Multiple GPU for GCE
 5. `set up password for jupyterhub`
 6. `(optional) make GCE ip stable and add ssh keys`
 7. enjoy!
+
+## GPU Setup
+
+1. [manually add/remove GPU](https://cloud.google.com/compute/docs/gpus/add-remove-gpus#api)
+2. [Driver Installtion](https://github.com/GoogleCloudPlatform/compute-gpu-installation)
 
 
 ## Detail Steps
