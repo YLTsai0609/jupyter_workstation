@@ -12,7 +12,7 @@ Detail Settings :
 4. (GCE) deploy jupyterhub.service from `/opt/jupyterhub/etc/systemd/jupyterhub.service` to `/etc/systemd/system/jupyterhub.service` (soft link)
 
 # TODO
-1. tensorflow GPU Test
+1. Integration Dev/Deployment Solution
 
 # User Management
 
@@ -46,4 +46,5 @@ ref : https://blog.csdn.net/weixin_48114253/article/details/117548513
 * develop using docker : 2+4 hr
 * develop using gcloud : 2+3 hr
 * GPU setup on gcloud : 3 hr
+* CUDA, CUDAToolKit, PyTorch : 4hr + 2hr
 * Total : 15hr

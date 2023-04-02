@@ -10,17 +10,23 @@ To simplify user management - without mapping host-machine users to jupyterhub s
    2. `create_gce_gpu.sh` - with nvidia driver only (without nvidia cuda toolkit and cuda runtime)
    3. `create_gce_gpu_torch.sh` - with nvidia driver, nvcc and pytorch
 2. `login GCE by gcloud command`
+
+(if development env)
+
 3. `install jupyterhub, nbextension, jupyter-template in root python env`
 4. `deploy jupyterhub_config.py & jupyter service`
 5. `set up password for jupyterhub`
 6. `(optional) make GCE ip stable and add ssh keys`
 7. enjoy!
 
+## TODO
+
+docker version of dev and deployment
+
 ## GPU Setup
 
 1. [manually add/remove GPU](https://cloud.google.com/compute/docs/gpus/add-remove-gpus#api)
-2. [Driver Installtion](https://github.com/GoogleCloudPlatform/compute-gpu-installation)
-
+2. [Driver & CUDA ToolKit Installtion](https://github.com/GoogleCloudPlatform/compute-gpu-installation)
 
 ## Detail Steps
 
