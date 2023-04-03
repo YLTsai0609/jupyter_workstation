@@ -31,7 +31,7 @@ docker version of dev and deployment
 2. login GCE by gcloud command
    - `username@localhost:~/path/jupyter_workstation/gcloud$ bash login_gce.sh`
 3. install jupyterhub, nbextension, jupyter-template in root python env
-   - git clone or scp `jupyter_workstation` to remote
+   - git clone or scp `jupyter_workstation` to remote `opt/workstation`
    - `username@localhost:~/path/jupyter_workstation/gcloud$ chomd 777 install_workstation.sh`
    - `username@Remote:~/$ sudo --login` (for better control)
    -  `root@Remote:path/jupyterworkstation/gcloud/$ bash install_workstation.sh`
