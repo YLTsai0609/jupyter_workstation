@@ -1,3 +1,4 @@
+########## Install too much I dont want ###########
 # https://cloud.google.com/deep-learning-vm/docs/pytorch_start_instance
 # list image family by : gcloud compute images list --project deeplearning-platform-release --no-standard-images
 INSTANCE_NAME=$1

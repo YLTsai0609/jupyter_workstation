@@ -1,3 +1,4 @@
+# for ubuntu 18.04 only
 # install base requirements
 # code borrow from jupyterhub dockerfile
 # https://github.com/jupyterhub/jupyterhub/blob/main/Dockerfile

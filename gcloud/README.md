@@ -13,7 +13,7 @@ To simplify user management - without mapping host-machine users to jupyterhub s
 
 (if development env)
 
-3. `install jupyterhub, nbextension, jupyter-template in root python env`
+3. `sudo --login`, `install jupyterhub, nbextension, jupyter-template in root python env` 
 4. `deploy jupyterhub_config.py & jupyter service`
 5. `set up password for jupyterhub`
 6. `(optional) make GCE ip stable and add ssh keys`
@@ -22,11 +22,6 @@ To simplify user management - without mapping host-machine users to jupyterhub s
 ## TODO
 
 docker version of dev and deployment
-
-## GPU Setup
-
-1. [manually add/remove GPU](https://cloud.google.com/compute/docs/gpus/add-remove-gpus#api)
-2. [Driver & CUDA ToolKit Installtion](https://github.com/GoogleCloudPlatform/compute-gpu-installation)
 
 ## Detail Steps
 
@@ -38,7 +33,7 @@ docker version of dev and deployment
 3. install jupyterhub, nbextension, jupyter-template in root python env
    - git clone or scp `jupyter_workstation` to remote
    - `username@localhost:~/path/jupyter_workstation/gcloud$ chomd 777 install_workstation.sh`
-   - `username@Remote:~/$ sudo -s` (for better control)
+   - `username@Remote:~/$ sudo --login` (for better control)
    -  `root@Remote:path/jupyterworkstation/gcloud/$ bash install_workstation.sh`
    -  test installtion by some command in `test.sh`
 4. deploy jupyterhub_config.py & jupyter service 
@@ -52,6 +47,12 @@ docker version of dev and deployment
 NOTE: develop in docker is still faster = )
 
 [ref](https://medium.com/google-cloud/containerized-jupyter-notebooks-on-gpu-on-google-cloud-8e86ef7f31e9)
+
+## GPU Setup
+
+1. [manually add/remove GPU](https://cloud.google.com/compute/docs/gpus/add-remove-gpus#api)
+2. [Driver & CUDA ToolKit Installtion](https://github.com/GoogleCloudPlatform/compute-gpu-installation)
+
 
 # Trouble Shooting
 ## ssh concern when GCE ip is shifting
@@ -98,7 +99,3 @@ rm -r /etc/apt/sources.list.d/nodesource.list
    - `sudo python3 /opt/google/install_gpu_driver.py` (systemwise python)
 
 2. [Use GPU in CircleCI](https://circleci.com/docs/using-gpu/?fbclid=IwAR0N5qHWGwqpdGg2wR6irVolhA8LbxMVkcvkfy18Gq_hFoQeRX4hqEsrPIE)
-
-## NOTE
-
-1. 按照不同需求來裝，如果是需要 torch，直接裝 `create_gce_gpu_torch.sh`，先挑好 cuda 版本，在自動挑 torch 版本，如果有需要，再安裝 tensorflow

@@ -1,3 +1,4 @@
+############ cudatoolkit control by conda (Development) or docker (Deployment)
 # could install this for all cuda thing (driver, compiler, source code)
 # need check specified version with your GPU
 

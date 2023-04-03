@@ -1,5 +1,5 @@
 # driver
 nvidia-smi
 
-# compiler
+# compiler (if needed)
 nvcc -V
