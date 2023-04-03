@@ -1,7 +1,7 @@
 # ref : https://cloud.google.com/sdk/gcloud/reference/compute/instances/create
 # or just start by gcloud command : https://cloud.google.com/deep-learning-vm/docs/pytorch_start_instance
 INSTANCE_NAME=$1
-GPUTYPE=$2 # nvidia-tesla-k80
+GPUTYPE=$2 # nvidia-tesla-k80, nvidia-tesla-t4
 GPUCOUNT=$3 # 1
 
 gcloud compute instances create $INSTANCE_NAME \
@@ -11,7 +11,7 @@ gcloud compute instances create $INSTANCE_NAME \
 --zone asia-east1-a \
 --image-family ubuntu-1804-lts \
 --image-project ubuntu-os-cloud \
---boot-disk-size 50GB \
+--boot-disk-size 300GB \
 --maintenance-policy TERMINATE \
 --restart-on-failure \
 
