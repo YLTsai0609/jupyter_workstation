@@ -56,6 +56,12 @@ ref : https://blog.csdn.net/weixin_48114253/article/details/117548513
 * `sudo usermod -aG sudo username` - given sudo access
 * `groups username` - check user with permission group
 
+## FireWall
+
+* [`tldr ufw`](https://noob.tw/ufw/)
+* `ufw allow from a.b.c.d to any port 22` - allow a.b.c.d to access port 22
+* `ufw status`
+
 # GCE Workstation checklist
 
 - [x] - GCE with GPU Driver and GPU
