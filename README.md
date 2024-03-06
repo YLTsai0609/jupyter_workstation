@@ -62,6 +62,13 @@ ref : https://blog.csdn.net/weixin_48114253/article/details/117548513
 * `ufw allow from a.b.c.d to any port 22` - allow a.b.c.d to access port 22
 * `ufw status`
 
+### Minimum trouble shooting on the firewall settings
+* `sudo ufw status`
+* create a simple http server - `python -m http.server 8888`
+* `sudo ufw allow from a.b.c.d to any port 8888`
+* check from remote machine - `curl  http://localhost:8888`
+* check from local machine - `curl  http://a.b.c.d:8888`
+
 # GCE Workstation checklist
 
 - [x] - GCE with GPU Driver and GPU
